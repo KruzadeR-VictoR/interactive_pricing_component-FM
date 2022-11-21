@@ -24,13 +24,13 @@ const handleToggle=()=>{
     circles:
       "absolute top-[50%] translate-y-[-50%] left-[50%]  translate-x-[-50%] scale-[1.1] z-[-9]",
     // card
-    card: "bg-White w-[90%] max-w-[30rem] mx-auto rounded-lg relative -top-[4rem] -translate-y-[20%] shadow-sm",
+    card: "bg-White w-[90%] max-w-[35rem] mx-auto rounded-lg relative -top-[4rem] -translate-y-[20%] shadow-sm",
     // top
-    top_section: "flex flex-col gap-10 p-5 pt-[2.5rem]",
+    top_section: "flex flex-col gap-10 md:gap-[3rem] p-5 pt-[2.5rem] md:p-10",
     card_heading:
-      "text-center text-[.8rem] font-800 uppercase text-GrayishBlue tracking-[2px]",
+      "text-center md:text-left text-[.8rem] font-800 uppercase text-GrayishBlue tracking-[2px]",
     slider: "slider bg-LightGrayishBlue1",
-    price: "flex justify-center items-center gap-3 text-GrayishBlue",
+    price: "flex justify-center items-center gap-3 text-GrayishBlue md:absolute md:right-[2rem] md:top-[1.5rem]",
     amount: "text-4xl font-800 text-DarkDesaturatedBlue",
     toggle:'toggle_switch bg-LightGrayishBlue2',
     toggleActive:'toggle_switch bg-LightGrayishBlue2 active',
@@ -39,9 +39,10 @@ const handleToggle=()=>{
     off_pecentage:
       "text-[.7rem] ml-1 bg-LightGrayishRed text-LightRed rounded-full px-2 py-[.1rem]",
     // bottom
-    bottom_section: "flex flex-col items-center gap-8 p-5 pb-9",
-    features: "flex flex-col items-center gap-3",
+    bottom_section: "flex flex-col md:flex-row items-center gap-8 p-5 pb-9 md:p-8",
+    features: "flex flex-col items-center md:items-start gap-3",
     feat: "text-[.8rem] text-GrayishBlue flex items-center gap-4",
+    startBtn_wrap:'flex-1 md:flex md:justify-end',
     startBtn:
       "bg-DarkDesaturatedBlue text-PaleBlue tracking-wider text-[.8rem] p-3 px-[3rem] rounded-full cursor-pointer hover:text-White",
   };
@@ -80,11 +81,11 @@ const handleToggle=()=>{
               <div className="toggle_icon bg-White"></div>
             </div>
             <div className={style.billing_text}>
-              Yearly Billing <span className={style.off_pecentage}>-25%</span>
+              Yearly Billing <span className={style.off_pecentage}>-25% <span className="hidden md:inline md:ml-[.1rem]">discount</span></span>
             </div>
           </div>
         </div>
-        <hr className="divider my-5" />
+        <hr className="divider my-5 md:my-4" />
         <div className={style.bottom_section}>
           <div className={style.features}>
             <div className={style.feat}>
@@ -100,7 +101,7 @@ const handleToggle=()=>{
               <img src={check} alt="check icon" /> Email reports
             </div>
           </div>
-          <div className="startBtn">
+          <div className={style.startBtn_wrap}>
             <button className={style.startBtn}>Start my trial</button>
           </div>
         </div>
