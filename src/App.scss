@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+label {
+  display: none;
+}
+
+/* toggle  */
+
+.toggle_switch {
+  cursor: pointer;
+  width: 3rem;
+  height: 1.5rem;
+  border-radius: 50px;
+  background: #000;
+  position: relative;
+}
+.active {
+  background: hsl(174, 77%, 80%) !important;
+}
+.active .toggle_icon {
+  /* left: 0; */
+  left: 90% !important;
+  translate: -90% -50%;
+}
+.toggle_icon {
+  position: absolute;
+  height: 70%;
+  aspect-ratio: 1;
+  left: 10%;
+  top: 50%;
+  translate: -10% -50%;
+  border-radius: 50%;
+  background: red;
+  transition: all 0.5s ease-in-out;
+}
+
+
+input[type="range"] {
+  appearance: none;
+  cursor: pointer;
+  border-radius: 50px;  
+  height: .55rem;
+  // for chrome
+  &::-webkit-slider-thumb{
+    appearance: none;
+    height: 2.5rem;
+    aspect-ratio: 1;
+    background-color: hsl(174, 86%, 45%);
+    background-image: url(../public/images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    margin-top: -0.9rem;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: hsl(174, 80%, 64%);
+    }
+    &:active {
+      cursor: grabbing;
+      background: hsl(174, 86%, 45%);
+      background-image: url(../public/images/icon-slider.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50%;
+    }
+  }    
+  &::-webkit-slider-runnable-track{
+    appearance: none;
+    height: 0.55rem;
+    background: transparent;
+    border-radius: 50px;
+  }
+//   for firefox 
+&::-moz-range-thumb{
+    appearance: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    border: none;
+    aspect-ratio: 1;
+    background-color: hsl(174, 86%, 45%);
+    background-image: url(../public/images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    margin-top: -0.9rem;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: hsl(174, 80%, 64%);
+    }
+    &:active {
+      cursor: grabbing;
+      background: hsl(174, 86%, 45%);
+      background-image: url(../public/images/icon-slider.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50%;
+    }
+  } 
+  &::-moz-range-track{
+    appearance: none;
+    height: 0.5rem;    
+    background: transparent;    
+    width: 100%;    
+    border-radius: 50px;
+  }
+
+}
