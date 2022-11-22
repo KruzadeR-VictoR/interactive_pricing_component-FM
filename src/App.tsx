@@ -13,7 +13,7 @@ function App() {
   const handleToggle = () => {
     setisActive((prev) => !prev);
     console.log(isActive);
-  };  
+  };
 
   const style = {
     App: "min-h-screen bg-VeryPaleBlue",
@@ -29,7 +29,7 @@ function App() {
     // top
     top_section: "flex flex-col gap-10 md:gap-[3rem] p-5 pt-[2.5rem] md:p-10",
     card_heading:
-      "text-center md:text-left text-[.8rem] font-800 uppercase text-GrayishBlue tracking-[2px]",    
+      "text-center md:text-left text-[.8rem] font-800 uppercase text-GrayishBlue tracking-[2px]",
     price:
       "flex justify-center items-center gap-3 text-GrayishBlue md:absolute md:right-[2rem] md:top-[1.5rem]",
     amount: "text-4xl font-800 text-DarkDesaturatedBlue",
@@ -49,11 +49,12 @@ function App() {
       "bg-DarkDesaturatedBlue text-PaleBlue tracking-wider text-[.8rem] p-3 px-[3rem] rounded-full cursor-pointer hover:text-White",
   };
 
-  // sets the style to slider on load 
+  // sets the style to slider on load
   useEffect(() => {
     console.log(rangeRef.current?.style.background);
-    let valPercent:any = (rangeRef.current?.value / rangeRef.current?.max) * 100;    
-    rangeRef.current.style.background=`linear-gradient(to right, hsl(174, 77%, 80%) ${valPercent}%, hsl(224, 65%, 95%) ${valPercent}%)`
+    let valPercent: any =
+      (rangeRef.current?.value / rangeRef.current?.max) * 100;
+    rangeRef.current.style.background = `linear-gradient(to right, hsl(174, 77%, 80%) ${valPercent}%, hsl(224, 65%, 95%) ${valPercent}%)`;
   }, []);
 
   const handleValue = (e: any) => {
@@ -78,16 +79,16 @@ function App() {
       {/* Card  */}
       <div className={style.card}>
         <div className={style.top_section}>
-          <h2 className={style.card_heading}>100K Pageviews</h2>         
-          <label htmlFor="Slider" aria-hidden="true"></label>
+          <h2 className={style.card_heading}>100K Pageviews</h2>
           <input
             type="range"
+            id="Slider"
             ref={rangeRef}
             min="0"
-            max='100'
+            max="100"
             value={Value}
             onChange={(e) => handleValue(e)}
-            id="Slider"
+            aria-label="range"
           />
           <div className={style.price}>
             <span className={style.amount}>$16.00</span>/ month
