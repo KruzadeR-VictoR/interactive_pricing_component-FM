@@ -87,6 +87,7 @@ function App() {
             max='100'
             value={Value}
             onChange={(e) => handleValue(e)}
+            id="Slider"
           />
           <div className={style.price}>
             <span className={style.amount}>$16.00</span>/ month
