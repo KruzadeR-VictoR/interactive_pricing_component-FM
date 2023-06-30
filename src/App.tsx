@@ -85,7 +85,7 @@ function App() {
             id="Slider"
             ref={rangeRef}
             min="0"
-            max="100"
+            max="35"
             value={Value}
             onChange={(e) => handleValue(e)}
             aria-label="range"
