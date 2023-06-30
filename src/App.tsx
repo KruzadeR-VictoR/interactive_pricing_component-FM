@@ -7,12 +7,12 @@ import check from "./assets/images/icon-check.svg";
 
 function App() {
   const [isActive, setisActive] = useState(true);
-  const [Value, setValue] = useState<number>(50);
+  const [Value, setValue] = useState<number>(16);
   const rangeRef = useRef<HTMLInputElement | any>(null);
 
   const handleToggle = () => {
     setisActive((prev) => !prev);
-    console.log(isActive);
+    // console.log(isActive);
   };
 
   const style = {
@@ -51,14 +51,14 @@ function App() {
 
   // sets the style to slider on load
   useEffect(() => {
-    console.log(rangeRef.current?.style.background);
+    // console.log(rangeRef.current?.style.background);
     let valPercent: any =
       (rangeRef.current?.value / rangeRef.current?.max) * 100;
     rangeRef.current.style.background = `linear-gradient(to right, hsl(174, 77%, 80%) ${valPercent}%, hsl(224, 65%, 95%) ${valPercent}%)`;
   }, []);
 
   const handleValue = (e: any) => {
-    console.log(e);
+    // console.log(e);
     setValue(e.target.value);
     let valPercent = (e.target.value / e.target.max) * 100;
     e.target.style.background = `linear-gradient(to right, hsl(174, 77%, 80%) ${valPercent}%, hsl(224, 65%, 95%) ${valPercent}%)`;
@@ -91,7 +91,7 @@ function App() {
             aria-label="range"
           />
           <div className={style.price}>
-            <span className={style.amount}>$16.00</span>/ month
+            <span className={style.amount}>${Value}</span>/ month
           </div>
           <div className={style.Billing_type}>
             <div className={style.billing_text}>Monthly Billing</div>
